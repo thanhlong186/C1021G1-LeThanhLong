@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký học viên</title>
+</head>
+<body style="background:burlywood">
+    <h1 style="background: aqua; color: blue;">ĐĂNG KÝ HỌC VIÊN</h1>
+    <form action="http://fit.com/user.php" method="post">
+    <label for="username">Họ và tên</label>
+    <input type="text" name="usernam" id="username"><br>
+        <br>
+    <label for="Brithday">Ngày sinh</label>
+    <input type="text" name="brithday" id="brithday"><br>
+        <br>
+        <label for="gender">Giới tính</label>
+        <Input type="radio" value="male" name="gender" id="male">
+        <label for="Male">Nam</label>
+        <input type="radio" value="female" name="gender" id="female">
+        <label for="female">Nữ</label><br>
+        <br>
+        <label for="address">Địa chỉ</label><br>
+        <textarea name="address" id="address" rows="5" cols="30"></textarea><br>
+        <br>
+        <label for="class">Lớp</label>
+        <Select name="class" id="class">
+            <option value="-Chọn lớp-">-Chọn lớp-</option>
+            <option value="C1021G1">C1021G1</option>
+            <option value="C921G1">C921G1</option>
+            <option value="C821G1">C8921G1</option>
+        </Select><br>
+        <br>
+        <label for="email">Email</label>
+        <input type="text" name="Email" id="Email"><br>
+        <br>
+        <label for="phone">Điên thoại</label>
+        <input type="text" name="phone" id="phone"><br>
+        <br>
+        <input type="submit" value="Đăng ký">
+        <button type="Reset">Nhập lại</button>
+    </form>
+</body>
+</html>
