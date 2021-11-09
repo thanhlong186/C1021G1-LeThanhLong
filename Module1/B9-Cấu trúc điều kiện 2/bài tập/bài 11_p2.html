@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt("Thu nhập cá nhân 1 năm của bạn: ")) ;
+        if (a > 10000000) {
+            b = a * 5/100
+            alert ('Tiền thuế mà bạn phải đóng là: ' + b);
+        } else if (a > 100000000) {
+            b = a * 10/1000
+            alert ('Tiền thuế mà bạn phải đóng là: ' + b);
+        } else if (a > 200000000) {
+            b = a * 15/100
+            alert ('Tiền thuế mà bạn pahir đóng là: ' + b);
+        }
+    </script>
+</body>
+</html>

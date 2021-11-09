@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // công  a * x2 + b * x + c = 0
+    let a = prompt("nhập gái trị của a");
+    let b = prompt("nhập giá trị của b");
+    let c = prompt("nhập giá trị của c");
+    let d = prompt()
+    let x1 = prompt()
+    let x2 = prompt()
+    if (a == 0) {
+        if (b == 0) {
+            alert ('Phương trình vô nghiệm');
+        } else
+            alert ('phương trình vô số nghiệm');
+    } else {
+            d = (b*b - 4*a*c);
+         if (d > 0) {
+             alert ('Phương trình vô nghiệm');
+         } else if (d == 0) {
+             x1 = x2 = (-b) / (2 * a);
+             alert ('Phương trình có 1 nghiệm x = ' + x1);
+         } else {
+             x1 = (-b + Math.sqrt(d)) / (2 * a);
+             x2 = (-b - Math.sqrt(d)) / (2 * a)
+             alert("Phương trình có 2 nghiệm x1 = " + x1 + " và x2 = " + x2)
+         }
+    }
+
+
+</script>
+
+</body>
+</html>

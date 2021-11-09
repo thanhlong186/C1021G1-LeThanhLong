@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo máy tính đơn giản</title>
+</head>
+<head>
+<body>
+<style>
+    button {
+        width: 50px;
+        margin: 5px;
+        color: blue;
+        height: 30px;
+    }
+
+    table {
+        border: 1px solid black;
+    }
+
+    input {
+        text-align: right;
+        width: 250px;
+        height: 30px;
+    }
+</style>
+</body>
+</head>
+<body>
+<form name="form">
+    <table>
+        <tr>
+            <th><input id="input" type="text"></th>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="displayInput('1')">1</button>
+                <button type="button" onclick="displayInput('2')">2</button>
+                <button type="button" onclick="displayInput('3')">3</button>
+                <button type="button" onclick="displayInput('+')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="displayInput('4')">4</button>
+                <button type="button" onclick="displayInput('5')">5</button>
+                <button type="button" onclick="displayInput('6')">6</button>
+                <button type="button" onclick="displayInput('-')">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="displayInput('7')">7</button>
+                <button type="button" onclick="displayInput('8')">8</button>
+                <button type="button" onclick="displayInput('9')">9</button>
+                <button type="button" onclick="displayInput('x')">X</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="document.getElementById('input').value=''">C</button>
+                <button type="button" onclick="displayInput('0')">0</button>
+                <button type="button"
+                        onclick="document.getElementById('input').value =eval(document.getElementById('input').value.replace('x','*'))">
+                    =
+                </button>
+                <button type="button" onclick="displayInput('/')">/</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+
+        function displayInput(value) {
+            document.getElementById('input').value = document.getElementById('input').value + value;
+        }
+    </script>
+</form>
+</body>
+</html>

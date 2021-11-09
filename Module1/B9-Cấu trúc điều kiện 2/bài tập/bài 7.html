@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá cước điện thoại</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập số phút bạn đã sử dụng"));
+    if (a < 50) {
+        b = a * 600
+        alert ('Giá cước bạn phải đóng là: ' + b);
+    } else if (a >= 150) {
+        b = a * 400
+        alert ('Giá cước bạn phải đóng là: ' + b);
+    } else {
+        b = a * 200
+        alert('Giá cước bạn phải đóng là: ' + b);
+    }
+</script>
+</body>
+</html>
