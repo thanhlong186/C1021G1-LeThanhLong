@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số đầu tiên chia hết cho 5</title>
+</head>
+<body>
+<script>
+    let a;
+    let b;
+    let c;
+    let count = 0;
+    a = 0;
+    b = 1;
+    while (count <= 1) {
+        c = a + b;
+        a = b;
+        b = c;
+        if (c%5===0) {
+            console.log(c);
+            document.write('<br>');
+            count++;
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

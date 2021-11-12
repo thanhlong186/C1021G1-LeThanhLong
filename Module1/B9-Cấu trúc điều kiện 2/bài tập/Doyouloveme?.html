@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color: blue">Chelsea Vô địch</h1>
+<button id="no" onmouseover="clickNo()" style="position: relative"> <n>No</n></button>
+
+<button onclick="clickYes()">Yes</button>
+</body>
+<script>
+
+    function clickYes() {
+        alert("Tất nhiên rồi!");
+    }
+
+
+
+    function clickNo() {
+        let x = window.innerWidth ;
+        let y = window.innerHeight ;
+
+        let item = document.getElementById("no");
+        item.style.left = Math.random() * x + 'px' ;
+        item.style.top = Math.random() * y + 'px' ;
+
+    }
+</script>
+</body>
+</html>

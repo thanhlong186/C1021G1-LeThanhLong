@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng 20 số đàu tiên</title>
+</head>
+<body>
+    <script>
+        let num1 = 0;
+        let num2 = 1;
+        let sum = 0;
+        let next  = num1 + num2;
+        for (i = 0; i <= 20; i++) {
+            next = num1 + num2;
+            num1 = num2;
+            num2 = next;
+            sum = next + sum;
+        }
+        document.write(sum);
+
+    </script>
+</body>
+</html>

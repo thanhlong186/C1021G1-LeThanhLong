@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sinh bảng cửu chương</title>
+</head>
+<body>
+        <h1><b>Bảng cửu chương</b></h1>
+    <script>
+        tab = "<table border='1' width ='1000' height ='200' cellspacing ='0' cellpadding ='3'>"
+        for (let i = 1; i <= 9; i++) {
+            tab = tab + "<tr>"
+            for (let j = 2; j <= 9; j++) {
+                tab = tab + "<td>" + j + "x" + i + "=" + (j * i) + "</td>";
+                // document.write(j + "x" + i + "=" + (j * i));
+                // document.write("\t");
+            }
+            // document.write("</br>");
+        }
+        tab = tab + "<table>";
+        document.write(tab);
+    </script>
+</body>
+</html>
