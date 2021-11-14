@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [5, 7, 56, 10, 34, 2, 20, 45, 4, 24];
+    let index = 0;
+    let max = a[0];
+    for (let i = 0; i < a.length; i++) {
+        if(max < a[i]){
+            a[i] = max;
+            index = i;
+        }
+    }
+    alert("max" + max + "index" + index);
+    for (let i = 0; i < a.length; i++){
+        index = index + a[i];
+    }
+    average = index / a.length;
+    document.write("Giá trị trung bình: ",average);
+
+</script>
+</body>
+</html>

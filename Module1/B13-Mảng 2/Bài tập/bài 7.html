@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = []
+    let i ;
+    let nhap;
+    let nhapV;
+    let viTri;
+    for (i=0; i<10; ){
+        nhap = prompt("nhập số nguyên: ");
+        if ((nhap>0|| nhap<=0)&&parseInt(nhap)== nhap){
+            number.push(nhap);
+            i++;
+        } else {
+            alert("nhập sai:");
+        }
+    }
+    do {
+        nhapV = prompt("nhập số nguyên V: ");
+        if ((nhapV>0|| nhapV<=0)&&parseInt(nhapV)== nhapV){
+            break;
+        } else {
+            alert("nhập sai:");
+        }
+    } while ( !((nhapV>0|| nhapV<=0)&& parseInt(nhapV)== nhapV) )
+    for (let i = 0; i < number.length; i++) {
+        if (nhapV == number[i]) {
+            viTri = i
+        }
+    }
+    let a = viTri
+    for ( ; a< number.length; a++){
+        if (a== (number.length-1) ){
+            number[a] = 0
+        } else {
+            number[a] = number[a+1]
+        }
+    }
+    document.write(nhapV+"<br>");
+    document.write("dãy số" + number)
+</script>
+
+</body>
+</html>
