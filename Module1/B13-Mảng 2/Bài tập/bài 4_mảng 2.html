@@ -6,10 +6,16 @@
 </head>
 <body>
 <script>
-    let str = "Le Thanh Long";
-    // Sử dụng split() để tách chuỗi -> từ
-    let substrings = str.split(" ");
-    console.log(substrings);
+    let str = prompt("Nhập vào một chuỗi");
+    let arr = str.split(" ");
+    let count = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].trim().length > 0) {
+            count++;
+        }
+    }
+    document.write("Số từ trong chuỗi trên là "+ count);
 </script>
 
 </body>
