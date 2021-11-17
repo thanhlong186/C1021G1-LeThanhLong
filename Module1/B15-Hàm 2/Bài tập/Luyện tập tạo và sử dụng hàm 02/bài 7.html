@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chỗ 2 số nguyên</title>
+</head>
+<body>
+<script>
+    function changeNumber(a,b) {
+        let c;
+        c = a;
+        a = b;
+        b = c;
+        alert("before: " + a + " " + b);
+        alert("after: " + b + " " + a);
+    }
+    let x = parseInt(prompt("Nhập vào số thứ nhất: "));
+    let y = parseInt(prompt("Nhập vào số thứ hai: "));
+    let result = changeNumber(x,y);
+</script>
+</body>
+</html>

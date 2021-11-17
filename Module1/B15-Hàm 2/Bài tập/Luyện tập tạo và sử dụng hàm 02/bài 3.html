@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thưa</title>
+</head>
+<body>
+<script>
+     function giaithua(a) {
+         let giaithua = 1;
+         for (let i = 1; i <= a; i++) {
+             giaithua *= i;
+         }
+         return giaithua;
+     }
+
+     let a = parseInt(prompt("nhập vào 1 số nguyên: "));
+     alert("Giá trị giai thừa của số nguyên là: " + giaithua(a));
+</script>
+</body>
+</html>

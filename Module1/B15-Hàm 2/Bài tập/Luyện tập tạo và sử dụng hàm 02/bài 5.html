@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị nhỏ nhất trong 3 số nguyên</title>
+</head>
+<body>
+    <script>
+// Cách 1:
+    //     function checkNumber(a,b,c) {
+    //         if (a < b && a < c) {
+    //             return a;
+    //         } else if (b < c && b < a) {
+    //             return b;
+    //         } else {
+    //         }
+    //         return c;
+    //     }
+    let x = parseInt(prompt("Vui lòng nhập số thứ nhất: "));
+    let y = parseInt(prompt("Vui lòng nhập số thứ hai: "));
+    let z = parseInt(prompt("Vui lòng nhập số thứ ba: "));
+ //   Cách 2:
+ alert(checkNumber(x,y,z));
+            function checkNumber(a,b,c) {
+                return (Math.min(a,b,c))
+            }
+    </script>
+</body>
+</html>

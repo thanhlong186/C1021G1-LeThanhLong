@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đảo ngược mảng số nguyên</title>
+</head>
+<body>
+<script>
+    function daoMang(array) {
+        array.reverse();
+        console.log(array);
+    }
+    let b = parseInt(prompt("Nhập số phần tử vào trong mảng : "));
+    let arr =[];
+    for (let i = 0; i < b; i++) {
+        arr[i] = prompt("nhập vào các gía trị:" + i);
+    }
+    daoMang(arr);
+</script>
+</body>
+</html>

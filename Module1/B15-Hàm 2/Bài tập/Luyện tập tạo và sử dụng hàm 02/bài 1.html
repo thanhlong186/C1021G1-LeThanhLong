@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính bình phương của 1 số</title>
+</head>
+<body>
+    <script>
+        function calsquare(number) {
+           let muHai = Math.pow(number,2);
+           return muHai;
+        }
+        let inputNumber = parseInt(prompt("Nhập vào một số: "));
+        result = calsquare(inputNumber);
+        alert("giá trị số bình phương là: " + result);
+        // function binhPhuong(x) {
+        //     let muHai = Math.pow(x,2);
+        //     return muHai;
+        // }
+        // let nhapX = prompt("Nhập vào 1 số muốn bình phương: ");
+        // result = binhPhuong(nhapX);
+        // alert("Giá trị của số đã được bình phương là:" + result);
+    </script>
+</body>
+</html>
