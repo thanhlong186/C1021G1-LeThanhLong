@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(c) {
+            this.c = c;
+        }
+        convertCtoF() {
+            return(this.c * 1.8)+32;
+        }
+        convertCtoK() {
+            return(this.c + 273);
+        }
+    }
+    let c = new Temperature(25);
+    console.log(c.convertCtoF()+''+c.convertCtoK());
+
+</script>
+</body>
+</html>

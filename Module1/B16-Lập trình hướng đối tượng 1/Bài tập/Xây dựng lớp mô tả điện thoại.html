@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô ta điện thoại</title>
+</head>
+<body>
+
+<script>
+        class Mobile {
+            constructor(name, battery, status) {
+                this.name = name;
+                this.battery = battery;
+                this.status = status;
+                this.tinNhan = " "; //lưu tn đang soạn thảo
+                this.hopThuDen = []; //lưu tn hộp thư đến
+                this.hopThuDi = []; // lưu tn đã gửi
+            }
+
+            checkStatusOnOff() {
+
+                if (this.battery > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            turnOn() {
+                document.write("Điện thoại đang bật");
+            }
+
+            turnOff() {
+                document.write("Điện thoại đang tắt");
+            }
+
+            sacPin() {
+                this.battery = 100;
+                document.write(this.name + ":sạc pin" + this.battery +"<br/>");
+
+            }
+
+            soanTinNhan(text) {
+                document.write(this.name + ": Soạn tin nhắn: " + text);
+                this.tinNhan = text;
+                this.battery--;
+            }
+
+            nhanTinNhan(tinNhan) {
+                document.write(this.name + ": nhận tin nhắn" + this.tinNhan + "<br/>");
+                this.hopThuDen.push(tinNhan);
+                this.battery--;
+                document.write(this.hopThuDen);
+            }
+
+            guiTinNhan(form) {
+                // form.hopthuden(this.tinnhan);
+                document.write(this.name + ": đã gửi 1 tin nhắn cho " + form.name + "<br/>");
+                this.hopThuDi.push(this.tinNhan);
+                form.nhanTinNhan(this.tinNhan);
+                this.tinNhan = "";
+                this.battery--;
+            }
+
+            xemTinNhanDen() {
+                document.write(this.name + ": xem tin nhắn trong hộp thư đến" + this.hopThuDen + "<br/>");
+                this.battery--;
+
+            }
+
+            xemTinDaGuiDi() {
+                document.write(this.name + ": xem tin nhắn đã gửi di" + this.hopThuDi + "<br/>");
+                this.battery--;
+            }
+        }
+
+        let Iphone = new Mobile("iphone", 50, "on");
+        let Samsung = new Mobile("Samsung", 70, "on");
+        console.log(Iphone);
+        console.log(Samsung);
+        Iphone.sacPin();
+        Iphone.soanTinNhan("Mày ngủ chưa? Tám với tao tí!" + "<br/>");
+        Iphone.soanTinNhan("abcd" + "<br/>");
+        Iphone.guiTinNhan(Samsung);
+        Samsung.nhanTinNhan();
+        Samsung.xemTinNhanDen();
+        Samsung.soanTinNhan("Tao đang làm bài, bài nhiều lắm. Tám sau nha :)" + "<br/>");
+        Samsung.guiTinNhan(Iphone);
+        Iphone.xemTinNhanDen();
+
+
+
+
+
+</script>
+</body>
+</html>
