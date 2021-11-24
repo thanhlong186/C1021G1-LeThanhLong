@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra 1 ky tu la nguyen am hay phu am</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhập 1 ký tự: ");
+    if (isNaN(parseInt(a))) {
+
+        switch (a) {
+            case 'U':
+            case 'E':
+            case 'O':
+            case 'A':
+            case 'I':
+            case 'u':
+            case 'e':
+            case 'o':
+            case 'a':
+            case 'i':
+                alert("Là ký tự nguyên âm ");
+                break;
+            default:
+                alert("Là ký tự phụ âm");
+            }
+        } else
+        alert("Vui lòng nhập chữ.")
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển chương trình sử dụng Remote để điều khiển Tivi</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor(code) {
+            this.code = code;
+        }
+        nutChuyenKenh(tivi) {
+            this.tivi
+            console.log("kênh " + this.kenh);
+        }
+        nutAmLuong(tivi) {
+            this.tivi;
+            console.log("âm lương tăng: " + this.amluong +2);
+        }
+        nutBac(tvObj) {
+            
+
+        }
+        nutTac(tvObj) {
+
+        }
+    }
+    class TiVi {
+        constructor(kenh, amluong, status) {
+            this.kenh = kenh;
+            this.amluong = amluong;
+            this.status = status; //bat va tat
+        }
+    batTiVi() {
+            this.status = true;
+            console.log("Tivi đã bật.");
+    tatTiVi()  {
+        this.status = false;
+        console.log("Tivi đã tắt.")
+        }
+    }
+    chuyenToKenh() {
+
+    }
+    amluong(){
+            this.amluong + 2;
+    }
+    }
+
+    let dieukhien = new Remote()
+     let tivi = new TiVi()
+
+
+</script>
+</body>
+</html>

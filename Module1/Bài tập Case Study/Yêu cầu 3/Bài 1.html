@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prefix Sums</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt("Nhập số lượng phần tử mảng: "));
+    let n = [];
+    let arrnew = [];
+    let sum = 0;
+    for (let i = 0; i < m; i++) {
+        n[i] = parseInt(prompt("Nhập phần tử: " + i));
+        sum = sum + n[i];
+        arrnew.push(sum);
+    }
+    alert(arrnew);
+</script>
+</body>
+</html>

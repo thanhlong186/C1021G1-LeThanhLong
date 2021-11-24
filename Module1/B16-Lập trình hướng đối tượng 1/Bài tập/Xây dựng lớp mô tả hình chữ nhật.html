@@ -5,6 +5,7 @@
     <title> Xây dựng lớp mô tả hình chữ nhật</title>
 </head>
 <body>
+<canvas id="canvasHTML"></canvas>
 <script>
     class Rectangle {
         constructor(chieuDai, chieuRong) {
@@ -33,11 +34,17 @@
         return "Chu vi là: " + this.getChuvi() + " " + "Diẹn tich là: " + this.getDientich();
     }
     }
-    let chieudai = parseInt(prompt("Nhập chiều dài: "));
-    let chieurong = parseInt(prompt("Nhập chiều rộng: "));
-    let test = new Rectangle(chieudai, chieurong);
+
+    let a = parseInt(prompt("Nhập chiều dài: "));
+    let b = parseInt(prompt("Nhập chiều rộng: "));
+    let test = new Rectangle(a, b);
     let result = test.toString();
     console.log(result);
+
+    let canvasHTML = document.getElementById("canvasHTML");
+    let ctx = canvasHTML.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(50, 90, a, b);
 
 
 </script>

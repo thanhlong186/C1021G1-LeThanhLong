@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn</title>
+</head>
+<body>
+<script>
+    class CongTacDien {
+        constructor(status, lamp) {
+            this.status = status; //Bật và tắt
+            this.lamp = lamp;
+        }
+
+        ketNoiBongDen(lamp) {
+            this.lamp = lamp;
+            console.log("đã kết nối với bóng đèn");
+        }
+
+        batCongTac() {
+            this.status = true;
+            this.lamp.turnOn;
+            console.log("công tắt đã bật: ");
+        }
+        tatCongTac() {
+            this.status = false;
+            this.lamp.turnOff;
+            console.log("Tắt công tác: ");
+        }
+
+    }
+    class BongDen {
+        constructor(status) {
+            this.status = status;
+        }
+
+        turnOn() {
+            this.status = true;
+            console.log("Bòng đèn đang sáng.")
+        }
+
+        turnOff() {
+            this.status = false;
+            console.log("Bóng đèn đã tắt.")
+        }
+    }
+
+    let congtacdien = new CongTacDien();
+    let bongden = new BongDen();
+    console.log(congtacdien);
+    console.log(bongden);
+    congtacdien.ketNoiBongDen(bongden);
+    congtacdien.batCongTac();
+    bongden.turnOn();
+    congtacdien.tatCongTac();
+    bongden.turnOff();
+
+
+</script>
+</body>
+</html>

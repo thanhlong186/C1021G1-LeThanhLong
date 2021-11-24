@@ -36,8 +36,12 @@
 
             sacPin() {
                 this.battery = 100;
-                document.write(this.name + ":sạc pin" + this.battery +"<br/>");
+                document.write(this.name + ": sạc pin" + this.battery +"<br/>");
 
+            }
+            checkBattery() {
+                // this.battery--;
+                document.write(this.name + " :lượng % pin đã giảm là " + this.battery--);
             }
 
             soanTinNhan(text) {
@@ -55,7 +59,7 @@
 
             guiTinNhan(form) {
                 // form.hopthuden(this.tinnhan);
-                document.write(this.name + ": đã gửi 1 tin nhắn cho " + form.name + "<br/>");
+                document.write(this.name + " đã gửi 1 tin nhắn cho " + form.name + "<br/>");
                 this.hopThuDi.push(this.tinNhan);
                 form.nhanTinNhan(this.tinNhan);
                 this.tinNhan = "";
@@ -63,7 +67,7 @@
             }
 
             xemTinNhanDen() {
-                document.write(this.name + ": xem tin nhắn trong hộp thư đến" + this.hopThuDen + "<br/>");
+                document.write(this.name + ": xem tin nhắn trong hộp thư đến: " + this.hopThuDen + "<br/>");
                 this.battery--;
 
             }
@@ -79,16 +83,16 @@
         console.log(Iphone);
         console.log(Samsung);
         Iphone.sacPin();
+        Samsung.sacPin();
         Iphone.soanTinNhan("Mày ngủ chưa? Tám với tao tí!" + "<br/>");
-        Iphone.soanTinNhan("abcd" + "<br/>");
+        // Iphone.soanTinNhan("abcd" + "<br/>");
         Iphone.guiTinNhan(Samsung);
         Samsung.nhanTinNhan();
         Samsung.xemTinNhanDen();
         Samsung.soanTinNhan("Tao đang làm bài, bài nhiều lắm. Tám sau nha :)" + "<br/>");
         Samsung.guiTinNhan(Iphone);
         Iphone.xemTinNhanDen();
-
-
+        Iphone.checkBattery();
 
 
 
