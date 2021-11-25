@@ -6,11 +6,11 @@
 </head>
 <body>
 <script>
-    // Bài 1:
-    myColor = ["Red","Green","White", "Black"];
-    console.log(myColor.toString());
-    console.log(myColor.join());
-    console.log(myColor.join('+'));
+    // // Bài 1:
+    // myColor = ["Red","Green","White", "Black"];
+    // console.log(myColor.toString());
+    // console.log(myColor.join());
+    // console.log(myColor.join('+'));
     // Bài 2:
     // let num = window.prompt();
     // let str = num.toString();
@@ -24,24 +24,24 @@
     //         }
     //         console.log(result.join(''));
     // Bài 3:
-    // let str = prompt('Vui lòng nhập tên: ');
-    // let UPPER = "QWERTYUIOPASDFGHJKLZXCVBNM";
-    // let LOWER = "qwertyuiopasdfghjklzxcvbnm";
-    // let result = [];
-    //     for (let a = 0; a < str.length; a++) {
-    //         if (UPPER.indexOf(str[a]) !== -1 ) {
-    //             result.push(str[a].toLowerCase());
-    //         }
-    //     else if(LOWER.indexOf(str[a]) !== -1)
-    //     {
-    //         result.push(str[a].toUpperCase());
-    //     }
-    //     else
-    //     {
-    //         result.push(str[a]);
-    //     }
-    //     }
-    //     console.log(result.join(''));
+    let str = prompt('Vui lòng nhập tên: ');
+    let UPPER = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    let LOWER = "qwertyuiopasdfghjklzxcvbnm";
+    let result = [];
+        for (let a = 0; a < str.length; a++) {
+            if (UPPER.indexOf(str[a]) !== -1 ) {
+                result.push(str[a].toLowerCase());
+            }
+        else if(LOWER.indexOf(str[a]) !== -1)
+        {
+            result.push(str[a].toUpperCase());
+        }
+        else
+        {
+            result.push(str[a]);
+        }
+        }
+        console.log(result.join(''));
 </script>
 
 </body>
