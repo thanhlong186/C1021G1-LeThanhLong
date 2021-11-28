@@ -2,27 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n.
+        Với m, n là các số nhập từ bàn phím.</title>
 </head>
 <body>
 <script>
-    let n = parseInt(prompt("Vui long nhap so luong phan tu 1: "));
-    let m = parseInt(prompt("Vui long nhap so luong phan tu 2: "));
-    let a=[];
-    let b=[];
+    let n = parseInt(prompt("Nhap so luong phan tu 1: "));
+    let m = parseInt(prompt("Nhap so luong phan tu 2: "));
+    let matran=[];
     let sum = 0;
     for (let i = 0; i < n; i++) {
-        a[i] = new Array(m);
+        matran[i] = new Array(m);
     }
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < m; j++) {
-            a[i][j] = parseInt(prompt("Nhập số phần tử: "));
-        if (a[i][j] % 2 == 0) {
-             sum += a[i][j];
+            matran[i][j] = parseInt(prompt("Nhập số phần tử: "));
+        if (matran[i][j] % 2 === 0) {
+             sum += matran[i][j];
                 }
             }
     }
-    console.log(sum);
+    console.table(matran);
+    alert("Tổng các số chẵn là: " + sum);
 </script>
 </body>
 </html>

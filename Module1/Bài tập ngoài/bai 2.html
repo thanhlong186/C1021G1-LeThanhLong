@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập độ dài mảng: "));
+    let mauso = [];
+    let tuso = [];
+    for (let i = 0; i < n; i++) {
+        // 1/2 2/4
+        tuso[i] = parseInt(prompt("Nhập vị trí tử số: " + i));
+        mauso[i] = parseInt(prompt("Nhập vị trí phần tử: " +  i));
+    }
+    for (let i = 0; i < tuso.length; i++) {
+        if (tuso[0] * mauso[n.length - 1] === tuso[n.length - 1] * mauso[0]) {
+            alert("Hai phân số bằng nhau");
+        } else {
+            alert("Hai số không bằng nhau");
+        }
+    }
+</script>
+</body>
+</html>

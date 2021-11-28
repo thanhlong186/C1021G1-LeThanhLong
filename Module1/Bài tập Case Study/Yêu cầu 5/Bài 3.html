@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        let a = createMatrix();
+
+    function findMaxAndMin(matrix) {
+        let max = matrix[0][0];
+        let min = matrix[0][0];
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                if (max < matrix[i][j]) {
+                    max = matrix[i][j];
+                }
+                if (min > matrix[i][j]) {
+                    min = matrix[i][j];
+                }
+            }
+        }
+        console.table(matrix);
+        alert("Phần tử lớn nhất là: " + max + "\n phần tử nhỏ nhất là: " + min);
+    }
+   findMaxAndMin(a);
+</script>
+</body>
+</html>

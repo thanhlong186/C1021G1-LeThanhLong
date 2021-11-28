@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều,
+        đếm các số nguyên tố có trong mảng đó.</title>
+</head>
+<body>
+    <script>
+        // Tạo mảng 2 chiều: từ đầu đến a[i] = row.
+        let m = parseInt(prompt("Nhập vào số lượng dòng:" ));
+        let n = parseInt(prompt("Nhập vào số lượng cột:" ));
+        let a = [];
+        let primeArr = [];
+        for (let i = 0; i < m; i++) {
+            let row = [];
+            for (let j = 0; j < n; j++) {
+                row[j] = parseInt(prompt("Nhập số vào:" ));
+            }
+            a[i] = row;
+        }
+        //Tạo hàm liệt kê các số nguyên tố:
+        function checkPrime(number) {
+            if (number < 2) {
+                 return false;
+            }
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if(number % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        function findPrime(a) {
+            for (let i = 0; i < a.length; i++) {
+                for (let j = 0; j < a[i].length; j++){
+                    if(checkPrime(a[i][j])) {
+                        primeArr.push(a[i][j]);
+                    }
+                }
+            }
+            console.table(a);
+            console.log(primeArr);
+        }
+        findPrime(a);
+    </script>
+</body>
+</html>
