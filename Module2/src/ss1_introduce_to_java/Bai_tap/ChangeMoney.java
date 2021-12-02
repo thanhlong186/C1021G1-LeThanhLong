@@ -2,7 +2,7 @@ package ss1_introduce_to_java.Bai_tap;
 
 import java.util.Scanner;
 
-public class Change_money {
+public class ChangeMoney {
     public static void main(String[] args) {
         double vnd = 23000;
         double usd;

@@ -2,7 +2,7 @@ package ss1_introduce_to_java.Thuc_hanh;
 
 import java.util.Scanner;
 
-public class Used_operator {
+public class Operator {
     public static void main(String[] args) {
         float width;
         float height;

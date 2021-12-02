@@ -2,7 +2,7 @@ package ss1_introduce_to_java.Thuc_hanh;
 
 import java.util.Scanner;
 
-public class Tinh_So_Ngay_Trong_Thang {
+public class DayInMonth {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
