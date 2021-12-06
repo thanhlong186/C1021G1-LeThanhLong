@@ -18,7 +18,7 @@ public class PushElementArray {
             a[i] = a[i - 1];
         }
         a[index] = x;
-        System.out.println("Sau khi them phaan tu: ");
+        System.out.println("Sau khi them phan tu: ");
         for (int element : a) {
             System.out.print(element + " ");
         }
