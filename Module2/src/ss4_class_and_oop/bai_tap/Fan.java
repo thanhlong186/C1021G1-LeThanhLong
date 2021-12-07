@@ -3,7 +3,7 @@ package ss4_class_and_oop.bai_tap;
 import java.util.Scanner;
 
 public class Fan {
-        private final int SLOW = 1;
+    private final int SLOW = 1;
     private final int MEDIUM = 2;
     private final int FAST = 3;
     private int speed = 1;
