@@ -3,15 +3,14 @@ package ss5_accessmodifier_staticmethod_staticproperty.bai_tap;
 import java.util.Scanner;
 
 public class TestCircle {
-    private double radius = 1.0;
+    private double radius;
     private String color = "red";
-    private double area;
 
     public TestCircle() {
     }
 
-    public TestCircle(double radius, double area){
-        this.area = area;
+    public TestCircle(double radius){
+
         this.radius = radius;
     }
 
@@ -40,7 +39,7 @@ public class TestCircle {
     }
 
     public static void main(String[] args) {
-        TestCircle circle = new TestCircle();
+        TestCircle circle = new TestCircle(6);
         System.out.println("Radius: " +  circle.getRadius());
         System.out.println("Area: " + circle.getArea());
     }
