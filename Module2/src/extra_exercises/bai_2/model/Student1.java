@@ -1,6 +1,6 @@
 package extra_exercises.bai_2.model;
 
-public class Student1 {
+public class Student1 implements Comparable<Student1> {
     private int id;
     private String fullName;
     private String dayOfBirth;
@@ -78,5 +78,10 @@ public class Student1 {
                 ", nameClass='" + nameClass + '\'' +
                 ", course='" + course + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student1 o) {
+        return getId() - o.getId();
     }
 }
