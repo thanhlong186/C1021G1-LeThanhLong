@@ -1,15 +1,19 @@
 package ss12_java_collection_framework.bai_tap.model;
 
-public class Product  {
+import java.util.Comparator;
+
+public class Product implements Comparable<Product>, Comparator<Product> {
         private int id;
         private String name;
         public double price;
+        static int productid;
 
         public Product() {
         }
 
-        public Product(int id, String name, double price) {
-                this.id = id;
+        public Product(String name, double price) {
+                productid++;
+                this.id = productid;
                 this.name = name;
                 this.price = price;
         }
@@ -45,5 +49,27 @@ public class Product  {
                         ", name='" + name + '\'' +
                         ", price=" + price +
                         '}';
+        }
+
+        @Override
+        public int compareTo(Product o) {
+                if (this.price > o.getPrice()) {
+                        return 1;
+                } else if (this.price < o.getPrice()) {
+                        return -1;
+                } else {
+                        return 0;
+                }
+        }
+
+        @Override
+        public int compare(Product o1, Product o2) {
+                if (o1.price > o2.getPrice()) {
+                        return -1;
+                } else if (o1.price < o2.getPrice()) {
+                        return 1;
+                } else {
+                        return 0;
+                }
         }
 }

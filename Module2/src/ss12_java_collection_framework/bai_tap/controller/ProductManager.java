@@ -13,27 +13,39 @@ public class ProductManager {
         IProduct iProduct = new ProductService();
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("--------MENU---------");
-            System.out.println("1. Thêm sản phẩm: ");
-            System.out.println("2. Sủa sản phảm: ");
-            System.out.println("3. Xoá sản phẩm: ");
-            System.out.println("4. Hiển thị sản phẩm: ");
-            System.out.println("5. Tìm kiếm sản phẩm: ");
-            System.out.println("6. Sắp xếp sản phẩm tăng dần: ");
-            System.out.println("7. Sắp xếp sản phẩm giảm dần: ");
+            System.out.println("---------MENU---------");
+            System.out.println("1. Add product: ");
+            System.out.println("2. Edit product: ");
+            System.out.println("3. Delete product: ");
+            System.out.println("4. Display product: ");
+            System.out.println("5. Search product: ");
+            System.out.println("6. Sort products in ascending order: ");
+            System.out.println("7. Sort products in descending order.: ");
             System.out.println("0. Exit: ");
 
             int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
                     iProduct.addNewProduct();
+                    break;
                 case 2:
-
+                    iProduct.editProduct();
+                    break;
                 case 3:
+                    iProduct.removeProduct();
+                    break;
                 case 4:
+                    iProduct.displayProduct();
+                    break;
                 case 5:
+                    iProduct.searchProduct();
+                    break;
                 case 6:
+                    iProduct.increaseProduct();
+                    break;
                 case 7:
+                    iProduct.decreaseProduct();
+                    break;
                 case 0:
                     System.exit(0);
                     break;
