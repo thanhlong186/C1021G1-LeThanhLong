@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class IllegalTriangleCheck {
     public void checkTriangleEdges(int a, int b, int c) throws IllegalTriangleException {
-        if (a + b <= c || a + c <= b || b + c <= a) {
+        if  (a <= 0 || b <= 0 || c <= 0) {
+            throw new IllegalTriangleException("Lỗi: Vui lòng không nhập số âm.");
+        } else if (a + b <= c || a + c <= b || b + c <= a){
             throw new IllegalTriangleException("Lỗi: Tam giác không hợp lệ.");
         } else {
             System.out.println("Tam giác hợp lệ.");
@@ -26,7 +28,6 @@ public class IllegalTriangleCheck {
                 check.checkTriangleEdges(a, b, c);
             } catch (IllegalTriangleException e) {
                 System.out.println(e.getMessage());
-                System.out.println("Vui lòng nhập số dương.");
             }
         }catch (Exception e1) {
             System.out.println("Không đúng hình dáng");
