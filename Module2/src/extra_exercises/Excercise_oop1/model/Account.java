@@ -51,6 +51,5 @@ public class Account {
                 '}';
     }
 
-    public double setAccountMoney() {
-    }
+
 }
