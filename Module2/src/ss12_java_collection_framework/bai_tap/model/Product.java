@@ -18,7 +18,7 @@ public class Product implements Comparable<Product>, Comparator<Product> {
                 this.price = price;
         }
 
-        public int getId() {
+    public int getId() {
                 return id;
         }
 

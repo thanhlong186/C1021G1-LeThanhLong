@@ -11,13 +11,13 @@ import java.util.List;
 
 public class FileUntil {
     public static final String FILE_COUNTRY = "/Users/thanhlong/Documents/codegym/Module2/src/ss16_IO_Text_File/bai_tap2/country.csv";
-    public static final String FILE_COUNTRY_CSV  = FILE_COUNTRY;
+
 
     public static List<Country> readCSV() {
         List<Country> countryList = new ArrayList<>();
 
         try {
-            FileReader fileReader = new FileReader(FILE_COUNTRY_CSV);
+            FileReader fileReader = new FileReader(FILE_COUNTRY);
             BufferedReader bufferReader = new BufferedReader(fileReader);
             String line;
             String temp[];
@@ -27,6 +27,7 @@ public class FileUntil {
                 temp = line.split(",");
                 country = new Country(Integer.parseInt(temp[0]), temp[1], temp[2]);
                 countryList.add(country);
+
             }
             bufferReader.close();
         }catch (FileNotFoundException e) {

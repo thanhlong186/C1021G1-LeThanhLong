@@ -22,8 +22,6 @@ public class CustomerServiceImpl implements ICustomer {
         int id = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhap ten: ");
         String name = scanner.nextLine();
-        System.out.println("Nhap ngay sinh: ");
-        String dayOfBirth = scanner.nextLine();
         System.out.println("Nhap gioi tinh : ");
         String sex = scanner.nextLine();
         System.out.println("Nhap tuoi: ");
@@ -38,7 +36,7 @@ public class CustomerServiceImpl implements ICustomer {
         String email = scanner.nextLine();
         System.out.println("Nhap loai khach: ");
         String guestType = scanner.nextLine();
-        Customer customer = new Customer(id, name, dayOfBirth, sex, age,
+        Customer customer = new Customer(id, name, sex, age,
                 address, denityCard, phoneNumber, email, guestType);
         customerArrayList.add(customer);
     }

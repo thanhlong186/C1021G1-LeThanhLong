@@ -9,11 +9,10 @@ public class Customer extends Person{
     public Customer() {
     }
 
-    public Customer(int id, String name, String dayOfBirth,
-                    String sex, int age, String address,
+    public Customer(int id, String name, String sex, int age, String address,
                     String dentityCard, String phonNumber,
                     String email, String guestType) {
-        super(id, name, dayOfBirth, sex, age, address);
+        super(id, name, sex, age, address);
         this.dentityCard = dentityCard;
         this.phonNumber = phonNumber;
         this.email = email;
@@ -57,7 +56,6 @@ public class Customer extends Person{
         return "Customer{" +
                 "id=' " + getId() + "\t" +
                 "fullname=' " + getName() + "\t" +
-                "dayOfBirth=' " + getDayOfBirth() + "\t" +
                 "sex=' " + getSex() + "\t" +
                 "age=' " + getAge() + "\t" +
                 "address=' " + getAddress() + "\t" +

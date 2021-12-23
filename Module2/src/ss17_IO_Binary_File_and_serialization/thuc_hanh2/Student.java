@@ -1,20 +1,18 @@
-package CaseStudy.model;
+package ss17_IO_Binary_File_and_serialization.thuc_hanh2;
 
-public abstract class Person {
+import java.io.Serializable;
+
+public class Student implements Serializable {
     private int id;
     private String name;
-    private String sex;
-    private int age;
     private String address;
 
-    public Person() {
+    public Student() {
     }
 
-    public Person(int id, String name, String sex, int age, String address) {
+    public Student(int id, String name, String address) {
         this.id = id;
         this.name = name;
-        this.sex = sex;
-        this.age = age;
         this.address = address;
     }
 
@@ -34,14 +32,6 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -50,11 +40,13 @@ public abstract class Person {
         this.address = address;
     }
 
-    public String getSex() {
-        return sex;
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
 }

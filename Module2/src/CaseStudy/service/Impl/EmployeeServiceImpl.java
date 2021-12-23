@@ -23,8 +23,6 @@ public class EmployeeServiceImpl implements IEmployee {
         int id = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhap ten: ");
         String name = scanner.nextLine();
-        System.out.println("Nhap ngay sinh: ");
-        String dayOfBirth = scanner.nextLine();
         System.out.println("Nhap gioi tinh : ");
         String sex = scanner.nextLine();
         System.out.println("Nhap tuoi: ");
@@ -43,7 +41,7 @@ public class EmployeeServiceImpl implements IEmployee {
         String position = scanner.nextLine();
         System.out.println("Nhap luong: ");
         int salary = Integer.parseInt(scanner.nextLine());
-        Employee employee = new Employee(id, name, dayOfBirth, sex, age, address,
+        Employee employee = new Employee(id, name, sex, age, address,
                 denityCard, phoneNumber, email, level, position, salary);
         employeeList.add(employee);
     }
