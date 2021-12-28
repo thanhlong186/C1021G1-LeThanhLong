@@ -1,1 +1,1 @@
-1,long,Nam,18/09/1997,Dn,123456789,0905789654,long@gmail.com,Giám đốc, ,120000
+id, Name, Sex, Age, Address, DentityCard, PhoneNumber, Email, Level, Position, Salary

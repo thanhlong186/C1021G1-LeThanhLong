@@ -22,7 +22,7 @@ public class CustomerServiceImpl implements ICustomerService {
             BufferedWriter bw1 = new BufferedWriter(fileWriter1);
             for (Customer customer : customerList) {
                 bw1.write(customer.getId() + "," + customer.getName() + "," + customer.getSex() + "," + customer.getAge() + "," + customer.getAddress() + "," +
-                        customer.getDentityCard() + "," + customer.getPhonNumber() + "," + customer.getEmail() + "," + customer.getGuestType());
+                        customer.getDentityCard() + "," + customer.getPhonNumber() + "," + customer.getEmail() + "," + customer.getGuestType() + "\n");
             }
             bw1.close();
     } catch (IOException e) {

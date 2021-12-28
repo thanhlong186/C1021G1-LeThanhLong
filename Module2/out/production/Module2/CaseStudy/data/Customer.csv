@@ -1,1 +1,2 @@
-1,thien,Nam,23/06/1993,QN,123456789,0906543123,thien123@gmail.com,Gold
+id, Name, Sex, Age, Address, DentityCard, PhoneNumber, Email, Level, Position, Salary
+

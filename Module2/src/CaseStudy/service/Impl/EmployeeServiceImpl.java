@@ -21,7 +21,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
             BufferedWriter bw = new BufferedWriter(fileWriter);
             for (Employee employee : employeeList) {
                 bw.write(employee.getId() + "," + employee.getName() + "," + employee.getSex() + "," + employee.getAge() + "," + employee.getAddress() + "," + employee.getDentityCard() + "," +
-                        employee.getPhonNumber() + "," + employee.getEmail() + "," + employee.getLevel() + "," + employee.getPosition() + "," + employee.getSalary());
+                        employee.getPhonNumber() + "," + employee.getEmail() + "," + employee.getLevel() + "," + employee.getPosition() + "," + employee.getSalary() + "\n");
             }
             bw.close();
     } catch (IOException e) {
