@@ -1,16 +1,16 @@
 package CaseStudy.model;
 
 public abstract class Person {
-    private int id;
+    private String id;
     private String name;
     private String sex;
-    private int age;
+    private String age;
     private String address;
 
     public Person() {
     }
 
-    public Person(int id, String name, String sex, int age, String address) {
+    public Person(String id, String name, String sex, String age, String address) {
         this.id = id;
         this.name = name;
         this.sex = sex;
@@ -18,11 +18,11 @@ public abstract class Person {
         this.address = address;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -34,11 +34,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

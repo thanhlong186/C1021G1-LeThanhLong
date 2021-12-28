@@ -1,8 +1,10 @@
 package CaseStudy.controller;
 
 import CaseStudy.model.Customer;
+import CaseStudy.service.Impl.BookingServiceImpl;
 import CaseStudy.service.Impl.CustomerServiceImpl;
 import CaseStudy.service.Impl.EmployeeServiceImpl;
+import CaseStudy.service.Impl.FacilityServiceImpl;
 import com.sun.codemodel.internal.JSwitch;
 
 import java.util.Scanner;
@@ -14,6 +16,7 @@ public class FuramaController {
 
     public static void displayMenu() {
         boolean check = true;
+        int choice =0;
         while (check) {
             System.out.println("---------Menu--------");
             System.out.println("1.\tEmployee Management: ");
@@ -24,7 +27,12 @@ public class FuramaController {
             System.out.println("6. Exit: ");
 
             Scanner scanner = new Scanner(System.in);
-            switch (scanner.nextInt()) {
+            try{
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Nhap sai dinh dang vui long nhap lai:");
+            }
+            switch (choice) {
                 case 1:
                     displayEmployeeMenu();
                     break;
@@ -50,6 +58,7 @@ public class FuramaController {
     public static void displayEmployeeMenu() {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         boolean check = true;
+        int choice = 0;
         while (check) {
             System.out.println("---------Menu--------");
             System.out.println("1.\tDisplay list employees: ");
@@ -58,7 +67,12 @@ public class FuramaController {
             System.out.println("4.\tReturn main menu: ");
 
             Scanner scanner = new Scanner(System.in);
-            switch (scanner.nextInt()) {
+            try{
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Nhap sai dinh dang vui long nhap lai:");
+            }
+            switch (choice) {
                 case 1:
                     employeeService.display();
                     break;
@@ -72,6 +86,7 @@ public class FuramaController {
     public static void displayCustomerMenu() {
         CustomerServiceImpl customerService =  new CustomerServiceImpl();
         boolean check = true;
+        int choice = 0;
         while (check) {
             System.out.println("---------Menu--------");
             System.out.println("1.\tDisplay list customers: ");
@@ -80,7 +95,12 @@ public class FuramaController {
             System.out.println("4.\tReturn main menu: ");
 
             Scanner scanner = new Scanner(System.in);
-            switch (scanner.nextInt()) {
+            try{
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Nhap sai dinh dang vui long nhap lai:");
+            }
+            switch (choice) {
                 case 1:
                     customerService.display();
                     break;
@@ -93,7 +113,9 @@ public class FuramaController {
     }
 
     public static void displayFacilityMenu() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         boolean check = true;
+        int choice = 0;
         while (check) {
             System.out.println("---------Menu--------");
             System.out.println("1.\tDisplay list facility: ");
@@ -102,14 +124,53 @@ public class FuramaController {
             System.out.println("4.\tReturn main menu: ");
 
             Scanner scanner = new Scanner(System.in);
-            switch (scanner.nextInt()) {
+            try{
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Nhap sai dinh dang vui long nhap lai:");
+            }
+            switch (choice) {
                 case 1:
+                    facilityService.display();
+                    break;
+                case 2:
+//                    facilityService.addNewVilla();
+                    addNewFacilityMenu();
+                    break;
+            }
+        }
+    }
+
+    public static void addNewFacilityMenu() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
+        boolean check = true;
+        int choice = 0;
+        while (check) {
+            System.out.println("---------Menu--------");
+            System.out.println("1.\tAdd new Villa: ");
+            System.out.println("2.\tAdd new House: ");
+            System.out.println("3.\tAdd new Room: ");
+            System.out.println("4.\tBack to menu: ");
+
+            Scanner scanner = new Scanner(System.in);
+            try{
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Nhap sai dinh dang vui long nhap lai:");
+            }
+            switch (choice) {
+                case 1:
+                    facilityService.addNewVilla();
+                    displayFacilityMenu();
+                    break;
             }
         }
     }
 
     public static void displayBookingMenu() {
         boolean check = true;
+        BookingServiceImpl bookingService = new BookingServiceImpl();
+        int choice = 0;
         while (check) {
             System.out.println("---------Menu--------");
             System.out.println("1.\tAdd new booking: ");
@@ -120,14 +181,25 @@ public class FuramaController {
             System.out.println("6.\tReturn main menu");
 
             Scanner scanner = new Scanner(System.in);
-            switch (scanner.nextInt()) {
+            try{
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Nhap sai dinh dang vui long nhap lai:");
+            }
+            switch (choice) {
                 case 1:
+                    bookingService.addNewBooking();
+                    break;
+                case 2:
+                    bookingService.disPlayListBooking();
+                    break;
             }
         }
     }
 
     public static void displayPromotionMenu() {
         boolean check = true;
+        int choice = 0;
         while (check) {
             System.out.println("---------Menu--------");
             System.out.println("1.\tDisplay list customers use service: ");
@@ -135,7 +207,12 @@ public class FuramaController {
             System.out.println("3.\tReturn main menu: ");
 
             Scanner scanner = new Scanner(System.in);
-            switch (scanner.nextInt()) {
+            try{
+                choice = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Nhap sai dinh dang vui long nhap lai:");
+            }
+            switch (choice) {
                 case 1:
             }
         }

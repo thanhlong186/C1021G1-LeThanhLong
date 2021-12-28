@@ -11,7 +11,7 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(int id, String name, String sex, int age,
+    public Employee(String id, String name, String sex, String age,
                     String address,
                     String dentityCard,
                     String phonNumber,
