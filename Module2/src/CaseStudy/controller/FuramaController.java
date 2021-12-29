@@ -134,7 +134,6 @@ public class FuramaController {
                     facilityService.display();
                     break;
                 case 2:
-//                    facilityService.addNewVilla();
                     addNewFacilityMenu();
                     break;
             }
@@ -162,6 +161,17 @@ public class FuramaController {
                 case 1:
                     facilityService.addNewVilla();
                     displayFacilityMenu();
+                    break;
+                case 2:
+                    facilityService.adđNewHouse();
+                    displayFacilityMenu();
+                    break;
+                case 3:
+                    facilityService.addNewRoom();
+                    displayFacilityMenu();
+                    break;
+                case 4:
+                    check = false;
                     break;
             }
         }

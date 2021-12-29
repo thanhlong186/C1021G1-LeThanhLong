@@ -8,7 +8,7 @@ public class Villa extends Facility{
     public Villa() {
     }
 
-    public Villa(String idFacility,
+        public Villa(String idFacility,
                  String nameService,
                  double usedArea,
                  double rentalCosts,
@@ -50,9 +50,15 @@ public class Villa extends Facility{
     @Override
     public String toString() {
         return "Villa{" +
-                "standardVilla='" + standardVilla + '\'' +
-                ", areaPool=" + areaPool +
-                ", floor=" + floor +
+                "ID Villa='" + getIdFacility() + '\'' +
+                "NameService='" + getNameService() + '\'' +
+                ", UsedArea=" + getUsedArea() +
+                ", RentalCosts=" + getRentalCosts() +
+                ", MaxAmount=" + getMaxAmount() +
+                ", RentalType='" + getRentalType() + '\'' +
+                "StandardVilla='" + standardVilla + '\'' +
+                ", AreaPool=" + areaPool +
+                ", Floor=" + floor +
                 '}';
     }
 }

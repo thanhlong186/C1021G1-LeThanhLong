@@ -26,6 +26,10 @@ public class BookingServiceImpl implements IBookingService {
                 "Day", "Normal", 30, 3), 0);
     }
 
+    public Set<Booking> sendBooking() {
+        return bookingSet;
+    }
+
     @Override
     public void addNewBooking() {
         int id = 1;

@@ -60,6 +60,7 @@ public class CustomerServiceImpl implements ICustomerService {
                 sex = "Nữ";
                 break;
         }
+
         String age;
         do {
             System.out.println("Nhap ngay sinh: ");

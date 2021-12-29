@@ -4,7 +4,7 @@ public class Booking {
     private int idBooking;
     private String startDate;
     private String endDate;
-    private String idCustomer;
+    private Customer idCustomer;
     private String nameService;
     private String TypeService;
 
@@ -12,7 +12,7 @@ public class Booking {
     }
 
     public Booking(int idBooking, String startDate, String endDate,
-                   String idCustomer, String nameService, String typeService) {
+                   Customer idCustomer, String nameService, String typeService) {
         this.idBooking = idBooking;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -48,11 +48,11 @@ public class Booking {
         this.endDate = endDate;
     }
 
-    public String getIdCustomer() {
+    public Customer getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(String idCustomer) {
+    public void setIdCustomer(Customer idCustomer) {
         this.idCustomer = idCustomer;
     }
 
