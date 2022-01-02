@@ -17,6 +17,11 @@ public class FacilityServiceImpl implements IFacilityService {
     private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
     private static Scanner scanner = new Scanner(System.in);
 
+    static {
+        readerVilla();
+        readerHouse();
+        readerRoom();
+    }
     public void write() {
         try {
             FileWriter fileWriterVilla = new FileWriter("/Users/thanhlong/Documents/codegym/Module2/src/CaseStudy/data/FacilityVilla.csv");
@@ -29,7 +34,7 @@ public class FacilityServiceImpl implements IFacilityService {
                 if (element.getKey() instanceof Villa) {
                     Villa villa = (Villa) element.getKey();
                     bufferedWriterVilla.write(villa.getIdFacility() + "," + villa.getNameService() + "," + villa.getUsedArea() + "," + villa.getRentalCosts() + "," +
-                            villa.getMaxAmount() + "," + villa.getRentalType() + "," + villa.getStandardVilla() + "," + villa.getAreaPool() + villa.getFloor());
+                            villa.getMaxAmount() + "," + villa.getRentalType() + "," + villa.getStandardVilla() + "," + villa.getAreaPool() + "," + villa.getFloor());
                     bufferedWriterVilla.newLine();
                     bufferedWriterVilla.close();
                 } else if (element.getKey() instanceof House) {
@@ -40,8 +45,8 @@ public class FacilityServiceImpl implements IFacilityService {
                     bufferedWriterHouse.close();
                 } else if (element.getKey() instanceof Room) {
                     Room room = (Room) element.getKey();
-                    bufferedWriterRoom.write(room.getIdFacility() + "," + room.getNameService() + "," + room + "," + room.getUsedArea() + "," + room.getRentalCosts() + "," + room.getMaxAmount() + "," +
-                            room.getRentalType() + "," + room.getFreeService());
+                    bufferedWriterRoom.write(room.getIdFacility() + "," + room.getNameService() + "," + room.getUsedArea() + "," + room.getRentalCosts() + ","
+                            + room.getMaxAmount() + "," + room.getRentalType() + "," + room.getFreeService());
                     bufferedWriterRoom.newLine();
                     bufferedWriterRoom.close();
                 }
@@ -53,10 +58,10 @@ public class FacilityServiceImpl implements IFacilityService {
         }
     }
 
-    public Map<Facility, Integer> readerVilla() {
+    public static Map<Facility, Integer> readerVilla() {
         Map<Facility, Integer> entry = new LinkedHashMap<>();
         try {
-            FileReader fileReader = new FileReader("/Users/thanhlong/Documents/codegym/Module2/src/CaseStudy/data/FacilityVilla.csv");
+            FileReader fileReader = new FileReader(new File("/Users/thanhlong/Documents/codegym/Module2/src/CaseStudy/data/FacilityVilla.csv"));
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
             String[] temp;
@@ -65,7 +70,8 @@ public class FacilityServiceImpl implements IFacilityService {
                 temp = line.split(",");
                 villa = new Villa(temp[0], temp[1], Double.parseDouble(temp[2]),
                         Double.parseDouble(temp[3]), Double.parseDouble(temp[4]), temp[5], temp[6],
-                        Double.parseDouble(temp[7]), Integer.parseInt(temp[9]));
+                        Double.parseDouble(temp[7]), Integer.parseInt(temp[8]));
+                entry.put(villa, 1);
             }
             if (villa != null) {
                 entry.put(villa, 1);
@@ -79,10 +85,10 @@ public class FacilityServiceImpl implements IFacilityService {
         return entry;
     }
 
-    public Map<Facility,Integer> readerHouse() {
+    public static Map<Facility,Integer> readerHouse() {
         Map<Facility, Integer> entryHouse = new LinkedHashMap<>();
         try {
-            FileReader fileReader = new FileReader("/Users/thanhlong/Documents/codegym/Module2/src/CaseStudy/data/FacilityHouse.csv");
+            FileReader fileReader = new FileReader(new File("/Users/thanhlong/Documents/codegym/Module2/src/CaseStudy/data/FacilityHouse.csv"));
             BufferedReader br = new BufferedReader(fileReader);
             String line;
             String[] temp;
@@ -91,6 +97,7 @@ public class FacilityServiceImpl implements IFacilityService {
                 temp = line.split(",");
                 house = new House(temp[0], temp[1], Double.parseDouble(temp[2]),
                         Double.parseDouble(temp[3]), Double.parseDouble(temp[4]), temp[5], temp[6], Integer.parseInt(temp[7]));
+                entryHouse.put(house, 1);
             }
             if (house != null) {
                 entryHouse.put(house, 1);
@@ -104,10 +111,10 @@ public class FacilityServiceImpl implements IFacilityService {
         return entryHouse;
     }
 
-    public Map<Facility, Integer> readerRoom() {
+    public static  Map<Facility, Integer> readerRoom() {
         Map<Facility, Integer> entryRoom = new LinkedHashMap<>();
         try{
-            FileReader fileReader = new FileReader("/Users/thanhlong/Documents/codegym/Module2/src/CaseStudy/data/FacilityRoom.csv");
+            FileReader fileReader = new FileReader(new File("/Users/thanhlong/Documents/codegym/Module2/src/CaseStudy/data/FacilityRoom.csv"));
             BufferedReader br1 = new BufferedReader(fileReader);
             String line;
             String[] temp;
@@ -116,6 +123,7 @@ public class FacilityServiceImpl implements IFacilityService {
                 temp = line.split(",");
                 room = new Room(temp[0], temp[1], Double.parseDouble(temp[2]),
                         Double.parseDouble(temp[3]), Double.parseDouble(temp[4]), temp[5], temp[6]);
+                entryRoom.put(room, 1);
         }
             if(room != null) {
                 entryRoom.put(room, 1);
@@ -143,28 +151,40 @@ public class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void addNewVilla() {
-        String id = "";
-        do {
-            System.out.print("Nhập mã dịch vụ: ");
-            id = scanner.nextLine();
-        } while (!Pattern.matches("^[S][V][V][L][-][0-9]{4}$", id));
+            int choice = 0;
+            String id = "";
 
-        String name = "";
-        do {
+            do {
+                System.out.print("Nhập mã dịch vụ: ");
+                id = scanner.nextLine();
+            } while (!Pattern.matches("^[S][V][V][L][-][0-9]{4}$", id));
+
+            String name = "";
+            do {
             System.out.println("Nhập tên dịch vụ. ");
             System.out.print("Hãy nhập chữ cái đầu tiên in hoa: \t");
             name = scanner.nextLine();
-        }while (!Pattern.matches("^[A-Z]{1}[a-z]+$", name));
+            }while (!Pattern.matches("^[A-Z]{1}[a-z]+$", name));
 
-        System.out.print("Nhập diện tích sử dụng: ");
-        double area = Double.parseDouble(scanner.nextLine());
-        while(area < 30) {
+            System.out.print("Nhập diện tích sử dụng: ");
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e) {
+                System.out.println("Nhập sai định dạng. Vui lòng nhập lại bằng số.");
+            }
+            double area = Double.parseDouble(scanner.nextLine());
+            while(area < 30) {
             System.out.print("Vui lòng nhập diện tích lớn hơn 30m2: \t");
             area = Double.parseDouble(scanner.nextLine());
-        }
+            }
 
 
             System.out.print("Nhập chi phí: ");
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e) {
+                System.out.println("Nhập sai định dạng. Vui lòng nhập lại bằng số.");
+            }
             double cost = Double.parseDouble(scanner.nextLine());
             while (cost < 0) {
                 System.out.print("Vui lòng nhập lại bằng số dương: \t");
@@ -172,6 +192,11 @@ public class FacilityServiceImpl implements IFacilityService {
             }
 
             System.out.print("Nhập số lượng người: ");
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+            }catch (NumberFormatException e) {
+                System.out.println("Nhập sai định dạng. Vui lòng nhập lại bằng số.");
+            }
             double amount = Double.parseDouble(scanner.nextLine());
             while(amount < 0 || amount > 20) {
                 System.out.print("Số lượng phải lớn hơn 0 và bé hơn 20: \t");
@@ -193,12 +218,22 @@ public class FacilityServiceImpl implements IFacilityService {
         }
 
         System.out.print("Nhập diện tích hồ bơi : ");
+        try {
+            choice = Integer.parseInt(scanner.nextLine());
+        }catch (NumberFormatException e) {
+            System.out.println("Nhập sai định dạng. Vui lòng nhập lại bằng số.");
+        }
         double areaPool = Double.parseDouble(scanner.nextLine());
         while(areaPool < 30) {
             System.out.print("Vui lòng nhập diện tích hồ bơi lớn hơn 30m2: \t");
             areaPool = Double.parseDouble(scanner.nextLine());
         }
         System.out.print("Nhập số tầng: ");
+        try {
+            choice = Integer.parseInt(scanner.nextLine());
+        }catch (NumberFormatException e) {
+            System.out.println("Nhập sai định dạng. Vui lòng nhập lại bằng số.");
+        }
         int floor = Integer.parseInt(scanner.nextLine());
         while (floor < 0) {
             System.out.print("Vui lòng nhập lại bằng số dương: \t");

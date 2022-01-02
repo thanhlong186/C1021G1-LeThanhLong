@@ -74,33 +74,18 @@ public class Employee extends Person {
     public void setSalary(int salary) {
         this.salary = salary;
     }
-//
-//    @Override
-//    public String toString() {
-//        return "Employee{" +
-//                "dentityCard='" + dentityCard + '\'' +
-//                ", phonNumber='" + phonNumber + '\'' +
-//                ", email='" + email + '\'' +
-//                ", level='" + level + '\'' +
-//                ", position='" + position + '\'' +
-//                ", salary=" + salary +
-//                '}';
-//    }
+
+
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id'=' " + getId() + "\t" +
-                "fullname'=' " + getName() + "\t" +
-                "sex'=' " + getSex() + "\t" +
-                "age'=' " + getAge() + "\t" +
-                "address'=' " + getAddress() + "\t" +
-                "dentityCard'='" + dentityCard + '\t' +
-                ", phonNumber='" + phonNumber + '\t' +
-                ", email='" + email + '\t' +
-                ", level='" + level + '\t' +
-                ", position='" + position + '\t' +
-                ", salary'='" + salary +
+        return "Employee{" + super.toString() +
+                "dentityCard='" + dentityCard + '\'' +
+                ", phonNumber='" + phonNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", level='" + level + '\'' +
+                ", position='" + position + '\'' +
+                ", salary=" + salary +
                 '}';
     }
 }

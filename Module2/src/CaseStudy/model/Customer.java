@@ -1,6 +1,6 @@
 package CaseStudy.model;
 
-public class Customer extends Person{
+public class Customer extends Person {
     private String dentityCard;
     private String phonNumber;
     private String email;
@@ -9,9 +9,11 @@ public class Customer extends Person{
     public Customer() {
     }
 
-    public Customer(String id, String name, String sex, String age, String address,
-                    String dentityCard, String phonNumber,
-                    String email, String guestType) {
+    public Customer(String id, String name,
+                    String sex, String age,
+                    String address, String dentityCard,
+                    String phonNumber, String email,
+                    String guestType) {
         super(id, name, sex, age, address);
         this.dentityCard = dentityCard;
         this.phonNumber = phonNumber;
@@ -53,13 +55,8 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=' " + getId() + "\t" +
-                "fullname=' " + getName() + "\t" +
-                "sex=' " + getSex() + "\t" +
-                "age=' " + getAge() + "\t" +
-                "address=' " + getAddress() + "\t" +
-                "dentityCard=" + dentityCard + '\'' +
+        return "Customer{" + super.toString() +
+                "dentityCard='" + dentityCard + '\'' +
                 ", phonNumber='" + phonNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", guestType='" + guestType + '\'' +

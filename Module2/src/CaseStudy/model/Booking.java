@@ -6,23 +6,21 @@ public class Booking {
     private String endDate;
     private Customer idCustomer;
     private String nameService;
-    private String TypeService;
+//    private String TypeService;
 
     public Booking() {
     }
 
     public Booking(int idBooking, String startDate, String endDate,
-                   Customer idCustomer, String nameService, String typeService) {
+                   Customer idCustomer, String nameService) {
         this.idBooking = idBooking;
         this.startDate = startDate;
         this.endDate = endDate;
         this.idCustomer = idCustomer;
         this.nameService = nameService;
-        TypeService = typeService;
+//        TypeService = typeService;
     }
 
-    public Booking(int id, String startDate, String endDate, Customer customer, Facility facility, String typeService) {
-    }
 
     public int getIdBooking() {
         return idBooking;
@@ -48,7 +46,8 @@ public class Booking {
         this.endDate = endDate;
     }
 
-    public Customer getIdCustomer() {
+    public Customer getIdCustomer()
+    {
         return idCustomer;
     }
 
@@ -64,13 +63,13 @@ public class Booking {
         this.nameService = nameService;
     }
 
-    public String getTypeService() {
-        return TypeService;
-    }
-
-    public void setTypeService(String typeService) {
-        TypeService = typeService;
-    }
+//    public String getTypeService() {
+//        return TypeService;
+//    }
+//
+//    public void setTypeService(String typeService) {
+//        TypeService = typeService;
+//    }
 
     @Override
     public String toString() {
@@ -80,7 +79,7 @@ public class Booking {
                 ", endDate='" + endDate + '\'' +
                 ", idCustomer='" + idCustomer + '\'' +
                 ", nameService='" + nameService + '\'' +
-                ", TypeService='" + TypeService + '\'' +
+//                ", TypeService='" + TypeService + '\'' +
                 '}';
     }
 }

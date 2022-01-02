@@ -1,10 +1,7 @@
 package CaseStudy.controller;
 
 import CaseStudy.model.Customer;
-import CaseStudy.service.Impl.BookingServiceImpl;
-import CaseStudy.service.Impl.CustomerServiceImpl;
-import CaseStudy.service.Impl.EmployeeServiceImpl;
-import CaseStudy.service.Impl.FacilityServiceImpl;
+import CaseStudy.service.Impl.*;
 import com.sun.codemodel.internal.JSwitch;
 
 import java.util.Scanner;
@@ -79,6 +76,12 @@ public class FuramaController {
                 case 2:
                     employeeService.addNew();
                     break;
+                case 3:
+                    employeeService.edit();
+                    break;
+                case 4:
+                    displayMenu();
+                    break;
             }
         }
     }
@@ -107,6 +110,12 @@ public class FuramaController {
                 case 2:
                     customerService.addNew();
                     break;
+                case 3:
+                    customerService.edit();
+                    break;
+                case 4:
+                    displayMenu();
+                    break;
 
             }
         }
@@ -127,7 +136,7 @@ public class FuramaController {
             try{
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Nhap sai dinh dang vui long nhap lai:");
+                System.out.println("Nhập sai định dạng. Vui lòng nhập lại bằng số:");
             }
             switch (choice) {
                 case 1:
@@ -136,6 +145,10 @@ public class FuramaController {
                 case 2:
                     addNewFacilityMenu();
                     break;
+                case 4:
+                    displayMenu();
+                    break;
+
             }
         }
     }
@@ -171,15 +184,18 @@ public class FuramaController {
                     displayFacilityMenu();
                     break;
                 case 4:
-                    check = false;
+//                    check = false;
+                    displayFacilityMenu();
                     break;
             }
         }
     }
 
     public static void displayBookingMenu() {
-        boolean check = true;
+
         BookingServiceImpl bookingService = new BookingServiceImpl();
+        ContractServiceImpl contractService = new ContractServiceImpl();
+        boolean check = true;
         int choice = 0;
         while (check) {
             System.out.println("---------Menu--------");
@@ -194,14 +210,28 @@ public class FuramaController {
             try{
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                System.out.println("Nhap sai dinh dang vui long nhap lai:");
+                System.out.println("Nhập sai định dạng vui lòng nhập lại.:");
             }
             switch (choice) {
                 case 1:
                     bookingService.addNewBooking();
+                    displayBookingMenu();
                     break;
                 case 2:
                     bookingService.disPlayListBooking();
+                    displayBookingMenu();
+                    break;
+                case 3:
+                    contractService.createNewConstracts();
+                    break;
+                case 4:
+                    contractService.disPlayListContact();
+                    break;
+                case 5:
+                    contractService.editContracts();
+                    break;
+                case 6:
+                    displayMenu();
                     break;
             }
         }
